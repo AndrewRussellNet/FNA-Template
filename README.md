@@ -85,7 +85,16 @@ To install the generated template in Visual Studio:
 
 (NOTE: Ensure that the .vstemplate file is at the root of the resulting .zip file. Otherwise the template will not work.)
 
-Note that the template requires the same "FNA" and "FNALibs" directories as specified above, as well as the "build" directory, exist in the directory above your project file. You will also need to add the FNA project to your solution.
+Creating your own solution
+--------------------------
+
+To use FNA Template to create projects in a fresh solution, you will need to:
+
+- Copy the "build" directory into the same directory as your new solution
+- Add the "FNA" and "FNALibs" directories as specified above
+- Add the FNA project to your solution (Right click solution -> Add Existing Project)
+
+From this point, you can use the CreateTemplate tool, or a template created by the CreateTemplate tool, to add new projects based on FNA Template to your solution.
 
 
 Building and loading shaders
