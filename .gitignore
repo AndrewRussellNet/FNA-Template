@@ -286,3 +286,12 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+
+
+#
+# Ignores for FNA-Template
+#
+# Ignore the libs directory (user will add it themselves)
+FNALibs
+
