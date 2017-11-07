@@ -62,7 +62,7 @@ If the template crashes inside FNA with a DllNotFoundException as the inner exce
 Using the CreateTemplate tool
 -----------------------------
 
-Use the CreateTemplate tool to create new versions of the FNATemplate (NOTE: Including any local modifications). This is easier than copying the files and fixing up names and GUIDs by hand.
+Use the CreateTemplate tool to create new versions of the FNATemplate project (NOTE: Including any local modifications). This is easier than copying the files and fixing up names and GUIDs by hand.
 
 The command line is:
 
@@ -70,7 +70,7 @@ The command line is:
 
 You can use it to directly create new projects:
 
-`CreateTemplate NewProject "X:\pathToThisSolution\FNATemplate" "X:\yourSolution\NewProject"`
+`CreateTemplate NewProject "X:\pathToThisSolution\FNATemplate" "X:\yourSolution"`
 
 Or you can create a Visual Studio template file, which itself can be used to create projects.
 
@@ -81,7 +81,7 @@ To install the generated template in Visual Studio:
 - Go to the output folder (containing the resulting .vstemplate file)
 - Select all files in that folder (Ctrl+A)
 - Add them to a zip (Right click -> Send To -> Compressed (zipped) folder)
-- Move that zip file to the project templates directory for your platform (eg: "C:\Users\ USERNAME\Documents\Visual Studio 2010\Templates\ProjectTemplates\Visual C#")
+- Move that zip file to the project templates directory for your platform (eg: "C:\Users\USERNAME\Documents\Visual Studio 2010\Templates\ProjectTemplates\Visual C#")
 
 (NOTE: Ensure that the .vstemplate file is at the root of the resulting .zip file. Otherwise the template will not work.)
 
@@ -94,7 +94,7 @@ To use FNA Template to create projects in a fresh solution, you will need to:
 - Add the "FNA" and "FNALibs" directories as specified above
 - Add the FNA project to your solution (Right click solution -> Add Existing Project)
 
-From this point, you can use the CreateTemplate tool, or a template created by the CreateTemplate tool, to add new projects based on FNA Template to your solution.
+From this point, you can use the CreateTemplate tool (or a Visual Studio template created by the same) to add new FNA game projects to your solution.
 
 
 Building and loading shaders
