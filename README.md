@@ -26,9 +26,9 @@ On OSX, the DirectX SDK is still required (and we need wine to help). Here is ho
 - Install Homebrew from https://brew.sh/
 - Install wine with `brew install wine`
 - Install winetricks with `brew install winetricks`
-- (If you already have these installed, update with `brew update`, `brew upgrade wine` `brew upgrade winetricks`)
+- (If you already have these installed, update with: `brew update`, `brew upgrade wine`, `brew upgrade winetricks`)
 - Setup wine with `winecfg`
-- Install the DirectSDK with `winetricks dxsdk_jun2010`
+- Install the DirectX SDK with `winetricks dxsdk_jun2010`
 
 NOTE: At time of writing there is a bug in winetricks that will cause the DirectX SDK to not install correctly. See https://github.com/Winetricks/winetricks/issues/841
 
@@ -53,7 +53,7 @@ In order to run in the debugger on Visual Studio on OSX, you will need to add an
 - Options
 - Run -> Configurations -> Default
 - Environment Variables -> Add
-- "DYLD_LIBRARY_PATH" "./osx/"
+- `DYLD_LIBRARY_PATH` | `./osx/`
 
 You will need to repeat these steps for any new projects you create from the template (because they are per-user debugging settings, not part of the project file).
 
@@ -77,13 +77,13 @@ Or you can create a Visual Studio template file, which itself can be used to cre
 To install the generated template in Visual Studio:
 
 - Go to the output folder (containing the resulting .vstemplate file)
-- Select all files in that folder (Ctrl + A)
+- Select all files in that folder (Ctrl+A)
 - Add them to a zip (Right click -> Send To -> Compressed (zipped) folder)
-- Move that zip file to the project templates directory for your platform (eg: "C:\Users\<USERNAME>\Documents\Visual Studio 2010\Templates\ProjectTemplates\Visual C#")
+- Move that zip file to the project templates directory for your platform (eg: "C:\Users\ USERNAME\Documents\Visual Studio 2010\Templates\ProjectTemplates\Visual C#")
 
 (NOTE: Ensure that the .vstemplate file is at the root of the resulting .zip file. Otherwise the template will not work.)
 
-Note that the template requires the "FNA" and "FNALibs" directories as specified above, as well as the "build" directory. You will also need to add the FNA project to your solution.
+Note that the template requires the same "FNA" and "FNALibs" directories as specified above, as well as the "build" directory, exist in the directory above your project file. You will also need to add the FNA project to your solution.
 
 
 Building and loading shaders
@@ -91,7 +91,7 @@ Building and loading shaders
 
 FNA Template uses fxc.exe (from the DirectX SDK) to build shaders, rather than using a content pipleine. This produces raw .fxb files rather than the usual .xnb content files.
 
-To add .fx (shader source) files to your project, add them and then set their Build Action to "Compile Shader" in the Properties window (typically the F4 key). (Set "Copy to Output Directory" to "Do not copy".)
+To add .fx (shader source) files to your project: Add them and then set their Build Action to "Compile Shader" in the Properties window (typically the F4 key). (Set "Copy to Output Directory" to "Do not copy".)
 
 To load a shader, read it directly from the .fxb file. For example:
 
