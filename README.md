@@ -37,7 +37,7 @@ You can either modify your winetricks to fix that bug (`which winetricks`, and t
 Required FNA components
 -----------------------
 
-You need to add the following directories at the same level as the solution file:
+You need to add the following directories at the same level as the solution file (note case sensitivity):
 
 - "FNA" containing the FNA project from https://github.com/FNA-XNA/FNA
 - "FNALibs" containing the FNA libraries from http://fna.flibitijibibo.com/archive/fnalibs.tar.bz2
@@ -53,9 +53,11 @@ In order to run in the debugger on Visual Studio on OSX, you will need to add an
 - Options
 - Run -> Configurations -> Default
 - Environment Variables -> Add
-- `DYLD_LIBRARY_PATH` | `./osx/`
+- Variable = `DYLD_LIBRARY_PATH`, Value = `./osx/`
 
 You will need to repeat these steps for any new projects you create from the template (because they are per-user debugging settings, not part of the project file).
+
+If the template crashes inside FNA with a DllNotFoundException as the inner exception of a TypeInitializationException, you forgot this step!
 
 Using the CreateTemplate tool
 -----------------------------
