@@ -37,7 +37,7 @@ namespace FNATemplate
 			// Most content can be loaded from MonoGame Content Builder projects.
 			// (Note how "Content.mgcb" has the Build Action "MonoGameContentReference".)
 			font = Content.Load<SpriteFont>("Font");
-			smile = Content.Load<Texture2D>("smile");
+			smile = Content.Load<Texture2D>("Smile");
 
 			// Effects need to be loaded from files built by fxc.exe from the DirectX SDK (June 2010)
 			// (Note how each .fx file has the Build Action "CompileShader", which produces a .fxb file.)
