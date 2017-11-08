@@ -14,6 +14,14 @@
 			<Link>osx\%(RecursiveDir)%(Filename)%(Extension)</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
+		<Content Include="..\FNALibs\lib\**\*.*" Condition="'$(OS)' != 'Windows_NT'" >
+			<Link>lib\%(RecursiveDir)%(Filename)%(Extension)</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="..\FNALibs\lib64\**\*.*" Condition="'$(OS)' != 'Windows_NT'" >
+			<Link>lib64\%(RecursiveDir)%(Filename)%(Extension)</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 	
 </Project>

@@ -3,7 +3,7 @@ FNA Template
 
 FNA Template is a quick, easy and robust way to start new projects using FNA (http://fna-xna.github.io/), Ethan Lee's excellent reimplementation of Microsoft XNA Game Studio.
 
-It has been tested with Visual Studio 2010 (on Windows) and Visual Studio Community 2017 (on OSX). But it should run on other versions of Visual Studio, or directly with MSBuild.
+It has been tested with Visual Studio 2010 (on Windows) and Visual Studio Community 2017 (on macOS). But it should run on other versions of Visual Studio, MonoDevelop, or directly with MSBuild.
 
 It uses MonoGame's content pipeline for building assets (except shaders), but does not use MonoGame at runtime. It does NOT require XNA or XNA Game Studio.
 
@@ -18,15 +18,22 @@ To use FNA Template you will need to install the following:
 - MonoGame (tested with MonoGame 3.6) from http://www.monogame.net/ for building content
 - DirectX SDK (June 2010) from https://www.microsoft.com/en-us/download/details.aspx?id=6812 for building shaders
 
-Building shaders on OSX
------------------------
+Building shaders on Linux/macOS
+-------------------------------
 
-On OSX, the DirectX SDK is still required (and we need wine to help). Here is how to install it:
+On Linux/macOS, the DirectX SDK is still required to compile shaders. On these platforms we use Wine to run the DirectX SDK tools.
+
+To install Wine and winetricks on macOS:
 
 - Install Homebrew from https://brew.sh/
 - Install wine with `brew install wine`
 - Install winetricks with `brew install winetricks`
 - (If you already have these installed, update with: `brew update`, `brew upgrade wine`, `brew upgrade winetricks`)
+
+To install Wine and winetricks on Linux, refer to your distribution's package database. Typically the package names will simply be `wine` and `winetricks`.
+
+To install the DirectX SDK:
+
 - Setup wine with `winecfg`
 - Install the DirectX SDK with `winetricks dxsdk_jun2010`
 
@@ -44,10 +51,10 @@ You need to add the following directories at the same level as the solution file
 
 At this point you should be able to open the solution file, and build and run the FNATemplate project.
 
-Debugging on OSX
-----------------
+Debugging on macOS
+------------------
 
-In order to run in the debugger on Visual Studio on OSX, you will need to add an environment variable:
+In order to run in the debugger on Visual Studio for Mac, you will need to add an environment variable:
 
 - Right click the FNATemplate project
 - Options
@@ -58,6 +65,14 @@ In order to run in the debugger on Visual Studio on OSX, you will need to add an
 You will need to repeat these steps for any new projects you create from the template (because they are per-user debugging settings, not part of the project file).
 
 If the template crashes inside FNA with a DllNotFoundException as the inner exception of a TypeInitializationException, you forgot this step!
+
+Debugging on Linux
+------------------
+
+The process for debugging with MonoDevelop on Linux is roughly the same as Visual Studio for Mac, except instead of setting `DYLD_LIBRARY_PATH` you need to set `LD_LIBRARY_PATH`, and the Value is based on your host architecture:
+
+- 64-bit: Variable = `LD_LIBRARY_PATH`, Value = `./lib64`
+- 32-bit: Variable = `LD_LIBRARY_PATH`, Value = `./lib`
 
 Using the CreateTemplate tool
 -----------------------------
