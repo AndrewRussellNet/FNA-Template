@@ -60,11 +60,11 @@ In order to run in the debugger on Visual Studio for Mac or MonoDevelop, you wil
 - Run -> Configurations -> Default
 - Environment Variables -> Add
 
-On macOS, set the following environment variable:
+On **macOS**, set the following environment variable:
 
 - Variable = `DYLD_LIBRARY_PATH`, Value = `./osx/`
 
-On Linux, set one of:
+On **Linux**, set one of the following:
 
 - 64-bit: Variable = `LD_LIBRARY_PATH`, Value = `./lib64`
 - 32-bit: Variable = `LD_LIBRARY_PATH`, Value = `./lib`
@@ -105,7 +105,7 @@ Creating your own solution
 To use FNA Template to create projects in a fresh solution, you will need to:
 
 - Copy the "build" directory into the same directory as your new solution
-- Add the "FNA" and "FNALibs" directories as specified above
+- Add the "FNA" and "fnalibs" directories as specified above
 - Add the FNA project to your solution (Right click solution -> Add Existing Project)
 
 From this point, you can use the CreateTemplate tool (or a Visual Studio template created by the same) to add new FNA game projects to your solution.
