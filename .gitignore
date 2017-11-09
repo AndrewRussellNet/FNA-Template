@@ -294,4 +294,5 @@ __pycache__/
 #
 # Ignore the libs directory (user will add it themselves)
 FNALibs
-
+# Ignore fxc.exe (it may be added to the build/tools directory)
+fxc.exe
