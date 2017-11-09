@@ -292,7 +292,8 @@ __pycache__/
 #
 # Ignores for FNA-Template
 #
-# Ignore the libs directory (user will add it themselves)
+# Ignore the libs directory (user will add it themselves), including legacy casing
 FNALibs
+fnalibs
 # Ignore fxc.exe (it may be added to the build/tools directory)
 fxc.exe
