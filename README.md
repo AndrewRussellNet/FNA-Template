@@ -32,9 +32,9 @@ At this point you should be able to open and build the solution. On Windows you 
 
 On Linux and macOS, the DirectX SDK is still required to compile shaders. On these platforms we use Wine to run the DirectX SDK tools.
 
-To install Wine and winetricks on Linux, refer to your distribution's package database. Typically the package names will simply be `wine` and `winetricks`.
+To install Wine and winetricks on **Linux**, refer to your distribution's package database. Typically the package names will simply be `wine` and `winetricks`.
 
-To install Wine and winetricks on macOS:
+To install Wine and winetricks on **macOS**:
 
 - Install Homebrew from https://brew.sh/
 - Install wine with `brew install wine`
@@ -43,7 +43,7 @@ To install Wine and winetricks on macOS:
 
 Once Wine and winetricks are installed:
 
-- Setup wine with `winecfg`
+- Setup Wine with `winecfg`
 - Install the DirectX SDK with `winetricks dxsdk_jun2010`
 
 NOTE: At time of writing there is a bug in winetricks that will cause the DirectX SDK to not install correctly. See https://github.com/Winetricks/winetricks/issues/841. You can either fix that bug (`which winetricks`, then find and replace the broken hash value), or use the alternative method:
