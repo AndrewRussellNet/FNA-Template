@@ -7,7 +7,7 @@ It has been tested with Visual Studio 2010 (on Windows) and Visual Studio Commun
 
 It uses MonoGame's content pipeline for building assets (except shaders), but does not use MonoGame at runtime. It does NOT require XNA or XNA Game Studio.
 
-FNA Template is released under the Microsoft Public License. (Note that this is the same license as FNA.)
+FNA Template is released under the Microsoft Public License. The contents of the "`FNATemplate`" directory, excluding the Roboto font, are additionally placed in the public domain and licenced under CC0.
 
 
 Getting Started
