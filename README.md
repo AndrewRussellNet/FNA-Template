@@ -46,9 +46,9 @@ Once Wine and winetricks are installed:
 - Setup Wine with `winecfg`
 - Install the DirectX SDK with `winetricks dxsdk_jun2010`
 
-NOTE: At time of writing there is a bug in winetricks that will cause the DirectX SDK to not install correctly. See https://github.com/Winetricks/winetricks/issues/841. You can either fix that bug (`which winetricks`, then find and replace the broken hash value), or use the alternative method:
+NOTE: Ensure you have the latest version of winetricks, or you may hit this bug: https://github.com/Winetricks/winetricks/issues/841.
 
-**Alternative:** Instead of installing the DirectX SDK, you can place a copy of `fxc.exe` from the DirectX SDK in the `build/tools` directory. Then use `winetricks d3dcompiler_43` to install the required DLL from the DirectX redistributable (this is a smaller download than the SDK). See `BuildShaders.targets` for details. The same fallback also works on Windows.
+**Alternative method:** Instead of installing the DirectX SDK, you can place a copy of `fxc.exe` from the DirectX SDK in the `build/tools` directory. Then use `winetricks d3dcompiler_43` to install the required DLL from the DirectX redistributable (this is a smaller download than the SDK). See `BuildShaders.targets` for details. The same fallback also works on Windows.
 
 (Linux/macOS) Setting the library path for debugging
 ----------------------------------------------------
@@ -80,15 +80,15 @@ Use the CreateTemplate tool to create new versions of the FNATemplate project (N
 
 The command line is:
 
-`CreateTemplate [--template] <ProjectName> <SourceDirectory> <DestinationDirectory>`
+`CreateTemplate [--source <SourceDir>] [--solution] [--template] <ProjectName> <DestinationDir>`
 
-You can use it to directly create new projects:
+You can use it to directly create new projects (or an entire solution with `--solution`):
 
-`CreateTemplate NewProject "X:\pathToThisSolution\FNATemplate" "X:\yourSolution"`
+`CreateTemplate NewProject "X:\yourSolution"`
 
 Or you can create a Visual Studio template file, which itself can be used to create projects.
 
-`CreateTemplate --template FNATemplate "X:\pathToThisSolution\FNATemplate" .`
+`CreateTemplate --template FNATemplate "X:\outputPath"`
 
 To install the generated template in Visual Studio:
 
@@ -99,16 +99,14 @@ To install the generated template in Visual Studio:
 
 (NOTE: Ensure that the .vstemplate file is at the root of the resulting .zip file. Otherwise the template will not work.)
 
-Creating your own solution
---------------------------
+Adding a FNA Template project to an existing solution
+-----------------------------------------------------
 
-To use FNA Template to create projects in a fresh solution, you will need to:
+To use an FNA Template-drived project in an existing solution you will need to:
 
 - Copy the "build" directory into the same directory as your new solution
 - Add the "FNA" and "fnalibs" directories as specified above
 - Add the FNA project to your solution (Right click solution -> Add Existing Project)
-
-From this point, you can use the CreateTemplate tool (or a Visual Studio template created by the same) to add new FNA game projects to your solution.
 
 
 Building and loading shaders
