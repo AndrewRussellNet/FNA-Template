@@ -86,7 +86,10 @@ You can use it to directly create new projects (or an entire solution with `--so
 
 `CreateTemplate NewProject "X:\yourSolution"`
 
-Or you can create a Visual Studio template file, which itself can be used to create projects.
+Creating a Visual Studio template
+---------------------------------
+
+You can create a template for Visual Studio, which itself can be used to create projects.
 
 `CreateTemplate --template FNATemplate "X:\outputPath"`
 
@@ -99,12 +102,12 @@ To install the generated template in Visual Studio:
 
 (NOTE: Ensure that the .vstemplate file is at the root of the resulting .zip file. Otherwise the template will not work.)
 
-Adding a FNA Template project to an existing solution
------------------------------------------------------
+Modifying an existing solution
+------------------------------
 
-To use an FNA Template-drived project in an existing solution you will need to:
+If you have an existing solution and you would like to add FNA Template-derived projects to it:
 
-- Copy the "build" directory into the same directory as your new solution
+- Copy the "build" directory into the same directory as your solution
 - Add the "FNA" and "fnalibs" directories as specified above
 - Add the FNA project to your solution (Right click solution -> Add Existing Project)
 
