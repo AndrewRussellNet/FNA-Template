@@ -3,6 +3,8 @@ FNA Template
 
 FNA Template is a simple, cross-platform way to start new projects using FNA (http://fna-xna.github.io/), Ethan Lee's excellent reimplementation of Microsoft XNA Game Studio.
 
+[![Demonstration Video](http://img.youtube.com/vi/lNw-9S_GdW8/0.jpg)](http://www.youtube.com/watch?v=lNw-9S_GdW8 "FNA Template Demonstration")
+
 It has been tested with Visual Studio 2010 (on Windows) and Visual Studio Community 2017 (on macOS), and should work with other versions of Visual Studio, MonoDevelop, or directly with MSBuild.
 
 It uses MonoGame's content pipeline for building assets (except shaders), but does not use MonoGame at runtime. It does NOT require XNA or XNA Game Studio.
