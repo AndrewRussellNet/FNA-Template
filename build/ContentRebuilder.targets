@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!-- Allow fast rebuild of MonoGame content. Expects MonoGame.Content.Builder.targets to have been included. -->
+	<Target Name="BuildContentOnly" DependsOnTargets="BuildContent;BuildShaders;_CopySourceItemsToOutputDirectory" />
+	
+	<!-- So what we call at runtime matches what we're building now... -->
+	<Target Name="WriteAssetRebuildInfo" BeforeTargets="Compile"
+			Condition="'$(Configuration)' == 'Debug'">
+		<WriteLinesToFile
+				File="$(OutputPath)AssetRebuildInfo.txt"
+				Lines="$(MSBuildToolsPath);$(MSBuildProjectFullPath)"
+				Overwrite="true"
+				Encoding="Unicode"/>
+	</Target>
+
+</Project>

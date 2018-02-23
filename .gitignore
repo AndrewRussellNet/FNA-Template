@@ -288,6 +288,9 @@ __pycache__/
 *.xsd.cs
 
 
+# MacOS Nonsense
+.DS_Store
+
 
 #
 # Ignores for FNA-Template

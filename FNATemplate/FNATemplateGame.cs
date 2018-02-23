@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace FNATemplate
 {
@@ -46,18 +47,51 @@ namespace FNATemplate
 			base.LoadContent();
 		}
 
+		protected override void UnloadContent()
+		{
+			Content.Unload();
+
+			spriteBatch.Dispose();
+			exampleEffect.Dispose();
+
+			base.UnloadContent();
+		}
+
+
+		KeyboardState lastKeyboardState;
 
 		protected override void Update(GameTime gameTime)
 		{
-			// Insert your game update logic here.
+			KeyboardState keyboardState = Keyboard.GetState();
 
+			//
+			// Asset Rebuilding:
+#if DEBUG
+			const Keys assetRebuildKey = Keys.F5;
+			if(keyboardState.IsKeyDown(assetRebuildKey) && lastKeyboardState.IsKeyUp(assetRebuildKey))
+			{
+				if(AssetRebuild.Run())
+				{
+					UnloadContent();
+					LoadContent();
+				}
+			}
+#endif
+
+			//
+			// Insert your game update logic here.
+			//
+
+			lastKeyboardState = keyboardState;
 			base.Update(gameTime);
 		}
 
 
 		protected override void Draw(GameTime gameTime)
 		{
+			//
 			// Replace this with your own drawing code.
+			//
 
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
