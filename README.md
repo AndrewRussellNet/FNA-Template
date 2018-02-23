@@ -112,8 +112,11 @@ If you have an existing solution and you would like to add FNA Template-derived 
 - Add the FNA project to your solution (Right click solution -> Add Existing Project)
 
 
+Dealing with Content
+====================
+
 Building and loading shaders
-============================
+----------------------------
 
 FNA Template uses fxc.exe (from the DirectX SDK) to build shaders, rather than using a content pipleine. This produces raw .fxb files rather than the usual .xnb content files.
 
@@ -129,7 +132,7 @@ Note that if you are not creating your own shaders, you can safely delete the sh
 
 
 Building and loading other content
-==================================
+----------------------------------
 
 Other content is built using the MonoGame Content Pipeline. The .mgcb file in the template can be opened with the MonoGame Content Pipeline Tool.
 
@@ -138,6 +141,15 @@ Unlike MonoGame, simply create the content for the Windows platform.
 Load content the same as you would with XNA or MonoGame. For example:
 
 `font = Content.Load<SpriteFont>("Font");`
+
+Runtime Asset Rebuild
+---------------------
+
+A simple content rebuild system is included in FNA Template. To use it, press **F5** while running a Debug build of the game. This will rebuild any modified content, and then call `UnloadContent` followed by `LoadContent`.
+
+On non-Windows platforms, it requires that `msbuild` is in your `PATH`.
+
+If you wish to use this in builds other than Debug builds, remove the relevant `#if DEBUG`s from the source code, and remove `Condition="'$(Configuration)' == 'Debug'"` from `build/ContentRebuilder.targets`.
 
 
 Distributing your game
