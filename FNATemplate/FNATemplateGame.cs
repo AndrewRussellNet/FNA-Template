@@ -58,17 +58,15 @@ namespace FNATemplate
 		}
 
 
-		KeyboardState lastKeyboardState;
 
 		protected override void Update(GameTime gameTime)
 		{
-			KeyboardState keyboardState = Keyboard.GetState();
+			Input.Update(IsActive);
 
 			//
 			// Asset Rebuilding:
 #if DEBUG
-			const Keys assetRebuildKey = Keys.F5;
-			if(keyboardState.IsKeyDown(assetRebuildKey) && lastKeyboardState.IsKeyUp(assetRebuildKey))
+			if(Input.KeyWentDown(Keys.F5))
 			{
 				if(AssetRebuild.Run())
 				{
@@ -82,7 +80,6 @@ namespace FNATemplate
 			// Insert your game update logic here.
 			//
 
-			lastKeyboardState = keyboardState;
 			base.Update(gameTime);
 		}
 
