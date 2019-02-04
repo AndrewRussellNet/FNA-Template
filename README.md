@@ -18,6 +18,9 @@ Getting Started
 To use FNA Template you will need to install the following:
 
 - **MonoGame** (tested with MonoGame 3.6) from http://www.monogame.net/ for building content
+- **Visual C++ Redistributable for Visual Studio 2012 Update 4** for building font content using MonoGame Content Builder (mgcb.exe)
+  - *On Windows:* Download from https://www.microsoft.com/en-us/download/details.aspx?id=30679
+  - *On Linux/macOS:* N/A
 - **DirectX SDK (June 2010)** for building shaders
   - *On Windows:* Download from https://www.microsoft.com/en-us/download/details.aspx?id=6812
   - *On Linux/macOS:* Install using Wine and winetricks (instructions below)
