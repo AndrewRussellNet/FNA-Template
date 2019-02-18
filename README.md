@@ -25,10 +25,9 @@ To use FNA Template you will need to install the following:
   - *On Windows:* Download from https://www.microsoft.com/en-us/download/details.aspx?id=6812
   - *On Linux/macOS:* Install using Wine and winetricks (instructions below)
 
-You will also need to add FNA itself. Place the following directories at the same level as the solution file (note case sensitivity):
+You will also need to add FNA/fnalib, included via git submodules:
 
-- **"FNA"** containing the FNA project from https://github.com/FNA-XNA/FNA
-- **"fnalibs"** containing the FNA libraries from http://fna.flibitijibibo.com/archive/fnalibs.tar.bz2
+`git submodule update --init --recursive`
 
 At this point you should be able to open and build the solution. On Windows you can now run and debug the FNATemplate project. On Linux/macOS there is an additional step to run it in the debugger (instructions below).
 
