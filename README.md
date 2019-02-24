@@ -135,6 +135,16 @@ Building and loading other content
 Other content should be built in some other fashion. It is not recommended to use the content pipeline bundled with the original version of this template for reasons outlined [here](http://flibitijibibo.com/xnacontent.html).
 
 
+Runtime Asset Rebuild
+---------------------
+
+A simple content rebuild system is included in FNA Template. To use it, press **F5** while running a Debug build of the game. This will rebuild any modified content, and then call `UnloadContent` followed by `LoadContent`.
+
+On non-Windows platforms, it requires that `msbuild` is in your `PATH`.
+
+If you wish to use this in builds other than Debug builds, remove the relevant `#if DEBUG`s from the source code, and remove `Condition="'$(Configuration)' == 'Debug'"` from `build/ContentRebuilder.targets`.
+
+
 Distributing your game
 ======================
 
