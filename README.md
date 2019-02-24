@@ -7,8 +7,6 @@ FNA Template is a simple, cross-platform way to start new projects using FNA (ht
 
 It has been tested with Visual Studio 2010 (on Windows) and Visual Studio Community 2017 (on macOS), and should work with other versions of Visual Studio, MonoDevelop, or directly with MSBuild.
 
-It uses MonoGame's content pipeline for building assets (except shaders), but does not use MonoGame at runtime. It does NOT require XNA or XNA Game Studio.
-
 FNA Template is released under the Microsoft Public License. The contents of the "`FNATemplate`" directory, excluding the Roboto font, are additionally placed in the public domain and licenced under CC0.
 
 
@@ -17,10 +15,6 @@ Getting Started
 
 To use FNA Template you will need to install the following:
 
-- **MonoGame** (tested with MonoGame 3.6) from http://www.monogame.net/ for building content
-- **Visual C++ Redistributable for Visual Studio 2012 Update 4** for building font content using MonoGame Content Builder (mgcb.exe)
-  - *On Windows:* Download from https://www.microsoft.com/en-us/download/details.aspx?id=30679
-  - *On Linux/macOS:* N/A
 - **DirectX SDK (June 2010)** for building shaders
   - *On Windows:* Download from https://www.microsoft.com/en-us/download/details.aspx?id=6812
   - *On Linux/macOS:* Install using Wine and winetricks (instructions below)
@@ -138,22 +132,7 @@ Note that if you are not creating your own shaders, you can safely delete the sh
 Building and loading other content
 ----------------------------------
 
-Other content is built using the MonoGame Content Pipeline. The .mgcb file in the template can be opened with the MonoGame Content Pipeline Tool.
-
-Unlike MonoGame, simply create the content for the Windows platform.
-
-Load content the same as you would with XNA or MonoGame. For example:
-
-`font = Content.Load<SpriteFont>("Font");`
-
-Runtime Asset Rebuild
----------------------
-
-A simple content rebuild system is included in FNA Template. To use it, press **F5** while running a Debug build of the game. This will rebuild any modified content, and then call `UnloadContent` followed by `LoadContent`.
-
-On non-Windows platforms, it requires that `msbuild` is in your `PATH`.
-
-If you wish to use this in builds other than Debug builds, remove the relevant `#if DEBUG`s from the source code, and remove `Condition="'$(Configuration)' == 'Debug'"` from `build/ContentRebuilder.targets`.
+Other content should be built in some other fashion. It is not recommended to use the content pipeline bundled with the original version of this template.
 
 
 Distributing your game
