@@ -132,7 +132,7 @@ Note that if you are not creating your own shaders, you can safely delete the sh
 Building and loading other content
 ----------------------------------
 
-Other content should be built in some other fashion. It is not recommended to use the content pipeline bundled with the original version of this template.
+Other content should be built in some other fashion. It is not recommended to use the content pipeline bundled with the original version of this template for reasons outlined [here](http://flibitijibibo.com/xnacontent.html).
 
 
 Distributing your game
