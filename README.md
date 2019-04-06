@@ -24,10 +24,8 @@ To use FNA Template you will need to install the following:
 - **DirectX SDK (June 2010)** for building shaders
   - *On Windows:* Download from https://www.microsoft.com/en-us/download/details.aspx?id=6812
   - *On Linux/macOS:* Install using Wine and winetricks (instructions below)
-
-You will also need to add FNA/fnalib, included via git submodules:
-
-`git submodule update --init --recursive`
+- **FNA dependencies** for platform support
+  - These are now included as a git submodule, just execute: `git submodule update --init --recursive`
 
 At this point you should be able to open and build the solution. On Windows you can now run and debug the FNATemplate project. On Linux/macOS there is an additional step to run it in the debugger (instructions below).
 
