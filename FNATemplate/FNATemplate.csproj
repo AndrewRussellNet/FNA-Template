@@ -78,7 +78,7 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <CompileShader Include="Effects\ExampleEffect.fx" />
+    <CompileShader Include="Content\Effects\ExampleEffect.fx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

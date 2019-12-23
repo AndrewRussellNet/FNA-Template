@@ -40,7 +40,9 @@ namespace FNATemplate
 
 			// Effects need to be loaded from files built by fxc.exe from the DirectX SDK (June 2010)
 			// (Note how each .fx file has the Build Action "CompileShader", which produces a .fxb file.)
-			exampleEffect = new Effect(GraphicsDevice, File.ReadAllBytes(@"Effects/ExampleEffect.fxb"));
+			// You can load the file directly, or FNA can pretend that it is a content file:
+			//exampleEffect = new Effect(GraphicsDevice, File.ReadAllBytes(@"Content/Effects/ExampleEffect.fxb"));
+			exampleEffect = Content.Load<Effect>(@"Effects/ExampleEffect");
 
 			base.LoadContent();
 		}
